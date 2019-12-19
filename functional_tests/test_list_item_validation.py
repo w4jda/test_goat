@@ -16,7 +16,8 @@ class ItemValidationTest(FunctionalTest):
                 "You cannot have an empty list item",
             )
         )
-
+        hello = list()
+        hello.append("a")
         # she tries again, which now it works
 
         self.browser.find_element_by_id("id_new_item").send_keys("Buy milk")
