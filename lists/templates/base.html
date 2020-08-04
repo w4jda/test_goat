@@ -11,7 +11,7 @@
   </head>
   
   <body>
-    <div class="container text-center">
+    <div class="container text">
 
       <nav class="navbar navbar-default" role="navigation">
 	<div class="container-fluid">
@@ -35,7 +35,7 @@
 
       {% if messages %}
       <div class="row">
-	<div class="col-md-8">
+	<div class="col-md-8 col-md-offset-2">
 	  {% for message in messages %}
 	  {% if message.level_tag == 'success' %}
 	  <div class="alert alert-success">{{ message }}</div>
