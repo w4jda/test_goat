@@ -5,7 +5,6 @@ from .server_tools import create_session_on_server
 from .management.commands.create_session import create_pre_authenticated_session
 
 
-
 class MyListTest(FunctionalTest):
 
     def create_pre_authenticated_session(self, email):

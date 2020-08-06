@@ -38,9 +38,8 @@ class LoginTest(FunctionalTest):
         finally:
             if email_id:
                 inbox.dele(email_id)
-                inbox.quit()
-            
-                                  
+            inbox.quit()
+                                              
 
     def test_can_get_email_link_to_log_in(self):
         # Edith goes to the awesome superlists site
@@ -74,7 +73,7 @@ class LoginTest(FunctionalTest):
 
         # She clicks it
         self.browser.get(url)
-
+        
         # She is logged in
         self.wait_to_be_logged_in(email=test_mail)
 

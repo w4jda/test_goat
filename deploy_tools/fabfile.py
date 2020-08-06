@@ -1,3 +1,4 @@
+import os
 from fabric.contrib.files import append, exists
 from fabric.api import cd, env, local, run
 from django.core.management.utils import get_random_secret_key
@@ -36,7 +37,8 @@ def _create_or_update_dotenv():
     if 'DJANGO_SECRET_KEY' not in current_contents:
         new_secret = get_random_secret_key()
         append('.env', f'DJANGO_SECRET_KEY={new_secret}')
-
+    email_password = os.environ['EMAIL_PASSWORD']
+    append('.env', f'EMAIL_PASSWORD={email_password}')
 
 def deploy():
     site_folder = f'/home/{env.user}/sites/{env.host}'
