@@ -28,7 +28,6 @@ class LoginTest(FunctionalTest):
             while time.time() - start < 60:
                 count, _ = inbox.stat()
                 for i in reversed(range(max(1, count - 10), count + 1)):
-                    print('getting msg', i)
                     _, lines, __ = inbox.retr(i)
                     lines = [l.decode('utf-8') for l in lines]
                     if f'Subject: {subject}' in lines:
